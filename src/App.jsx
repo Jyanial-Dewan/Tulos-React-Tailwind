@@ -65,7 +65,7 @@ export default function App() {
         <Route path='/jewelery' element={<JeweleryPage/>}/>
         <Route path='/user-list' element={<UserListPage/>}/>
         <Route path='/user-form' element={<UserFormPage/>}/>
-        <Route path='/cart-list' element={<CartListPage/>}/>
+        {cart.length === 0?<Route path='*' element={<NotFoundPage/>}/> : <Route path='/cart-list' element={<CartListPage/>}/>}
       </Route>
       <Route path='*' element={<NotFoundPage/>}/>
     </Routes>
